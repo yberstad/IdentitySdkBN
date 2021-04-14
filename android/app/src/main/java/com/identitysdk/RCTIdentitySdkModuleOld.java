@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import io.signicat.identity_sdk.client.IdentitySDK;
 
-public class RCTIdentitySdkModule extends ReactContextBaseJavaModule {
+public class RCTIdentitySdkModuleOld extends ReactContextBaseJavaModule {
     private static final String SUCCESS = "SUCCESS";
     private static final String CANCELED = "CANCELED";
     private static final String ERROR_START_AUTHORIZATION = "ERROR_START_AUTHORIZATION";
@@ -55,7 +55,7 @@ public class RCTIdentitySdkModule extends ReactContextBaseJavaModule {
 //        }
 //    };
 
-    public RCTIdentitySdkModule(ReactApplicationContext reactContext) {
+    public RCTIdentitySdkModuleOld(ReactApplicationContext reactContext) {
         super(reactContext);
 
         // Add the listener for `onActivityResult`
@@ -68,7 +68,7 @@ public class RCTIdentitySdkModule extends ReactContextBaseJavaModule {
         try {
             mPromise = promise;
             ReactApplicationContext context = getReactApplicationContext();
-            intent = new Intent(context, IdentitySdkActivity.class);
+            //intent = new Intent(context, IdentitySdkActivity.class);
 
             if (intent.resolveActivity(context.getPackageManager()) != null) {
                 intent.setFlags((Intent.FLAG_ACTIVITY_NEW_TASK));
